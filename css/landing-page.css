@@ -1,0 +1,69 @@
+.main-container main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main .left {
+  width: 50%;
+  padding: 5vw;
+  font-size: 2rem;
+}
+main h1{
+  animation: move-in 1s ease 1s 1 forwards;
+  transform: translate(-100%, 0%);
+  opacity: 0;
+}
+.left h1 span:first-child {
+  color: var(--accent-color);
+}
+.left h1 span:last-child {
+  color: var(--accent-color-2);
+}
+.left h5 {
+  margin-block: 1.5rem 3rem;
+  color: var(--secondary-text-color);
+  animation: move-in 1s ease 1.5s 1 forwards;
+  transform: translate(-100%, 0%);
+  opacity: 0;
+}
+.left button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: var(--accent-color);
+  text-shadow: 0 0 5px black;
+  transition: 0.3s;
+  animation: move-in 1s ease 2s 1 forwards;
+  transform: translate(-10%, 0%);
+  opacity: 0;
+}
+.left button:hover {
+  background-color: var(--accent-color-2);
+  box-shadow: 2px 2px 20px var(--accent-color-2);
+}
+
+main .right {
+  width: 50%;
+}
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: move-in 1s ease .5s 1 forwards;
+  transform: translate(-100%, 0%);
+  opacity: 0;
+}
+
+
+@keyframes move-in {
+  100%{
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,49 @@
+aside {
+  height: 92vh;
+  width: 20%;
+  position: fixed;
+  bottom: 0;
+  background: var(--transparent-bg-color);
+}
+.menu {
+  padding-left: 3vw;
+  padding-top: 3vw;
+}
+
+.menu h3 {
+  display: block;
+  margin-block: 5px;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  color: #fff;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  margin-bottom: 1px;
+  transition: all ease 0.3s;
+}
+
+.menu h3.active {
+  background: var(--primary-text-color);
+  color: var(--secondary-bg-color);
+  box-shadow: -2px 2px 7px var(--accent-color);
+  padding-left: 30px;
+}
+.menu h3:hover {
+  scale: 1.1;
+  padding-left: 35px;
+}
+.menu h3.active:hover {
+  scale: 1;
+  padding-left: 30px;
+}
+
+main {
+  position: fixed;
+  width: 80%;
+  height: 92vh;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

@@ -1,0 +1,38 @@
+:root {
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #e8e8e8e8;
+  --primary-bg-color: #2f303d;
+  --secondary-bg-color: #161629;
+  --tertiary-bg-color: #000000;
+  --transparent-bg-color: #1616296b;
+  --accent-color: #20cede;
+  --accent-color-2: #fe83c1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--primary-text-color);
+  background-image: linear-gradient(to right, #0000, #000 55%),
+    url(../assets/worldmap.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(3px);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+
+.main-container {
+  width: 90vw;
+  margin-inline: auto;
+}
