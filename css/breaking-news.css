@@ -1,0 +1,48 @@
+.news-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  row-gap: 3rem;
+  flex-wrap: wrap;
+}
+.news-box {
+  width: 31%;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 0px 7px var(--accent-color-2);
+  background-color: var(--secondary-bg-color);
+  transition: all 0.3s;
+  padding: 10px;
+}
+.news-box:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 2px 2px 9px var(--accent-color);
+  background-color: var(--primary-bg-color);
+}
+
+.news-box .user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.interaction {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 14px;
+}
+.interaction a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.interaction a i {
+  font-size: 1.5rem;
+}
+#news-src {
+  color: var(--secondary-text-color);
+  display: block;
+  margin-bottom: 10px;
+  padding-inline: 20px;
+}

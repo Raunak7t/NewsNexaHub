@@ -11,11 +11,6 @@ if (!isset($_SESSION['email'])) {
 	$username = $_SESSION['username'];
 	$email = $_SESSION['email'];
 
-  $mysqli = require __DIR__ . "/../php/dbcon.php";
-  $sql = "select * from newsposts";
-  $result = $mysqli->query($sql);
-  $mysqli->close();
-
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +18,11 @@ if (!isset($_SESSION['email'])) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Breaking News</title>
+    <title>Add News</title>
     <link rel="stylesheet" href="../css/resets.css" />
     <link rel="stylesheet" href="../css/nav.css" />
     <link rel="stylesheet" href="../css/aside.css" />
-    <link rel="stylesheet" href="../css/breaking-news.css" />
+    <link rel="stylesheet" href="../css/add-news.css" />
     <script
       src="https://kit.fontawesome.com/4718b98a04.js"
       crossorigin="anonymous"
@@ -76,10 +71,10 @@ if (!isset($_SESSION['email'])) {
     <aside>
       <div class="menu">
         <a href="breaking-news.php">
-            <h3 class="active">Breaking News</h3>
+            <h3>Breaking News</h3>
         </a>
         <a href="add-news.php">
-            <h3>Add News</h3>
+            <h3 class="active">Add News</h3>
         </a>
         <a href="about-us.php">
             <h3>About Us</h3>
@@ -95,45 +90,16 @@ if (!isset($_SESSION['email'])) {
     </aside>
 
     <main>
-      <div class='news-boxes'>
-        <?php
-          if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-              $p_username = $row['username'];
-              $id = $row['id'];
-              $title = $row['title'];
-              $descr = $row['descr'];
-              $date = $row['date'];
-              $src = $row['src'];
-              $likes = $row['likes'];
-              $dislikes = $row['dislikes'];
-
-              echo "
-                <div class='news-box' id='news-box' id='$id'>
-                  <div class='user'>
-                    <h5 id='news-username'>$p_username</h5>
-                    |
-                    <h5 id='news-date'>$date</h5>
-                  </div>
-                  <h3 id='news-title'>$title</h3>
-                  <div class='interaction'>
-                    <a href='breaking-news.php?p_id=$id&action=like' class='likes'>
-                      <i class='fa fa-thumbs-up icon'></i>
-                      <p>$likes</p>
-                    </a>
-                    <a href='breaking-news.php?p_id=$id&action=dislike' class='dislikes'>
-                      <i class='fa fa-thumbs-down icon'></i>
-                      <p>$dislikes</p>
-                    </a>
-                  </div>
-                  <a href='' id='news-src'>Source: $src</a>
-                  <small id='news-desc'>$descr</small>
-                </div>
-              ";
-            }
-          }
-        ?>
-      </div>
+        <h1>Post news</h1>
+      <form action="../php/post-news.php" method="post" class="add-news-container">
+        <label for="p-title">Title:</label>
+        <input type="text" id="p-title" class="input-field" name="p-title" required>
+        <label for="p-desc">Description:</label>
+        <textarea id="p-desc" rows="2" class="input-field" name="p-desc"></textarea>
+        <label for="p-src">News source link (optional):</label>
+        <input type="text" id="p-src"  class="input-field" name="p-src">
+        <button type="submit" class="btn">UPLOAD</button>
+      </form>
     </main>
   </body>
 </html>
