@@ -70,7 +70,7 @@ if (!isset($_SESSION['email'])) {
 
     <aside>
       <div class="menu">
-        <a href="more.php">
+        <a href="breaking-news.php">
             <h3>Breaking News</h3>
         </a>
         <a href="add-news.php">
@@ -95,34 +95,34 @@ if (!isset($_SESSION['email'])) {
   <div class="team">
     <div class="team_member">
       <div class="team_img">
-        <img src="https://i.imgur.com/2pGPLrl.png" alt="Team_image">
+        <img src="../assets/satish-narwade.jpg" alt="Team_image">
       </div>
-      <h3>Paul Doe</h3>
-      <p class="role">UI developer</p>
-      <p>Lorem ipsum dolam blanditiis dignissimos.</p>
+      <h3>Satish Narwade</h3>
+      <!-- <p class="role">UI developer</p> -->
+      <p>Research, UI, Database, etc</p>
     </div>
     <div class="team_member">
       <div class="team_img">
-        <img src="https://i.imgur.com/jQj1I8E.png" alt="Team_image">
+        <img src="../assets/tejas-patil.jpg" alt="Team_image">
       </div>
-      <h3>Rosie Meg</h3>
-      <p class="role">Tester</p>
-      <p>Lorem ipsum dolor slanditiis dignissimos.</p></div>
+      <h3>Tejas Patil</h3>
+      <!-- <p class="role">Tester</p> -->
+      <p>Testing</p></div>
     <div class="team_member">
       <div class="team_img">
-        <img src="https://i.imgur.com/2Necikc.png" alt="Team_image">
+        <img src="../assets/samartha-sathpute.jpg" alt="Team_image">
       </div>
-      <h3>Alex Wood</h3>
-      <p class="role">Support Lead</p>
-      <p>Lorem ipsum io quam blanditiis dignissimos.</p>
+      <h3>Samartha Sathpute</h3>
+      <!-- <p class="role">Support Lead</p> -->
+      <p>Assisting</p>
     </div>
     <div class="team_member">
       <div class="team_img">
-        <img src="https://i.imgur.com/2Necikc.png" alt="Team_image">
+        <img src="../assets/dhiraj-bendge.jpg" alt="Team_image">
       </div>
-      <h3>Alex Wood</h3>
-      <p class="role">Support Lead</p>
-      <p>Lorem ipsum duam blanditiis dignissimos.</p>
+      <h3>Dhiraj Bendge</h3>
+      <!-- <p class="role">Support Lead</p> -->
+      <p>Assisting</p>
     </div>
   </div>
 </div>

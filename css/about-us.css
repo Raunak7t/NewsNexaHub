@@ -20,12 +20,14 @@
   line-height: 20px;
   color: var(--primary-text-color);
   position: relative;
+  border-radius: 15px;
 }
 
 .team .team_member h3 {
-  color: var(--);
+  color: var(--accent-color-2);
   font-size: 26px;
   margin-top: 100px;
+  margin-bottom: 20px;
 }
 
 .team .team_member p.role {
@@ -43,6 +45,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .team .team_member .team_img img {

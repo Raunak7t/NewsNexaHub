@@ -75,7 +75,7 @@ if (!isset($_SESSION['email'])) {
 
     <aside>
       <div class="menu">
-        <a href="more.php">
+        <a href="breaking-news.php">
             <h3>Breaking News</h3>
         </a>
         <a href="add-news.php">
