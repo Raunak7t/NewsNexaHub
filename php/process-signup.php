@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $mysqli = require __DIR__ . "/dbcon.php";
 
 $username = $_POST['username'];

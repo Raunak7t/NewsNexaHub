@@ -8,13 +8,52 @@ if (!isset($_SESSION['email'])) {
     exit;
 }
 
-	$username = $_SESSION['username'];
-	$email = $_SESSION['email'];
-
   $mysqli = require __DIR__ . "/../php/dbcon.php";
+
+  
+  if (isset($_GET['action'])) {
+
+    $p_id = $_GET['p_id'];
+  
+  // Check if the like link is clicked
+    if ($_GET['action'] == 'like'){
+      // Update the likes in the database
+      $updateSql = "UPDATE newsposts SET likes = likes + 1 WHERE id = '$p_id'";
+      $mysqli->query($updateSql);
+      
+      // Check if the update was successful
+      if ($mysqli->affected_rows > 0) {
+        //updated successfully
+        header("Location: breaking-news.php#$p_id");
+        exit;
+      } else {
+        echo "Error updating ratings: " . $mysqli->error;
+      }
+    }
+    
+  // Check if the dislike link is clicked
+    if ($_GET['action'] == 'dislike'){
+      // Update the dislikes in the database*/
+      $updateSql = "UPDATE newsposts SET dislikes = dislikes + 1 WHERE id = '$p_id'";
+      $mysqli->query($updateSql);
+      
+      // Check if the update was successful
+      if ($mysqli->affected_rows > 0) {
+        //updated successfully
+        header("Location: breaking-news.php#$p_id");
+        exit;
+      } else {
+        echo "Error updating dislikes: " . $mysqli->error;
+      }
+    }
+  }
+
   $sql = "select * from newsposts";
   $result = $mysqli->query($sql);
   $mysqli->close();
+
+	$username = $_SESSION['username'];
+	$email = $_SESSION['email'];
 
 ?>
 
@@ -109,7 +148,7 @@ if (!isset($_SESSION['email'])) {
               $dislikes = $row['dislikes'];
 
               echo "
-                <div class='news-box' id='news-box' id='$id'>
+                <div class='news-box' id='$id'>
                   <div class='user'>
                     <h5 id='news-username'>$p_username</h5>
                     |
@@ -118,12 +157,12 @@ if (!isset($_SESSION['email'])) {
                   <h3 id='news-title'>$title</h3>
                   <div class='interaction'>
                     <a href='breaking-news.php?p_id=$id&action=like' class='likes'>
-                      <i class='fa fa-thumbs-up icon'></i>
+                      <img src='../assets/like.png' alt='like'>
                       <p>$likes</p>
-                    </a>
-                    <a href='breaking-news.php?p_id=$id&action=dislike' class='dislikes'>
-                      <i class='fa fa-thumbs-down icon'></i>
+                      </a>
+                      <a href='breaking-news.php?p_id=$id&action=dislike' class='dislikes'>
                       <p>$dislikes</p>
+                      <img src='../assets/dislike.png' alt='like'>
                     </a>
                   </div>
                   <a href='' id='news-src'>Source: $src</a>

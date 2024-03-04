@@ -27,18 +27,28 @@
   gap: 10px;
   margin-bottom: 14px;
 }
+#news-title {
+  background: var(--primary-bg-color);
+  padding: 10px;
+  border-radius: 10px;
+}
+.news-box:hover #news-title {
+  background-color: var(--secondary-bg-color);
+}
 .interaction {
   display: flex;
   justify-content: space-between;
-  margin-block: 14px;
+  padding-block: 10px;
+  margin-block: 10px;
+  border-bottom: 1px solid var(--primary-text-color);
 }
 .interaction a {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.interaction a i {
-  font-size: 1.5rem;
+.interaction a img {
+  height: 40px;
 }
 #news-src {
   color: var(--secondary-text-color);
